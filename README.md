@@ -27,3 +27,5 @@ if err != nil {
     return
 }
 ```
+
+If you want to see an example of how it should be done, check example/odaquery.go .
