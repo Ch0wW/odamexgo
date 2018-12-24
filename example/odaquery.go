@@ -2,6 +2,8 @@
 
 import (
 	"fmt"
+
+	"github.com/ch0ww/odamexgo"
 )
 
 /*
@@ -27,6 +29,7 @@ func main() {
 	//================================================================================
 	// Printing INFOS
 
+	fmt.Println(sv.Ip + sv.Port)
 	fmt.Println("")
 	fmt.Println("==============================")
 	fmt.Println("[SERVER INFO]")

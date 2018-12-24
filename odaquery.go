@@ -41,7 +41,7 @@ type TeamInfo struct {
 ServerInfo : Handles all the data of an Odamex server
 */
 type ServerInfo struct {
-	ip, port string
+	Ip, Port string
 
 	Challenge int32
 	Token     int32
@@ -178,8 +178,8 @@ func (s *ServerQuery) ParseOdamex070() ServerInfo {
 
 	var sv ServerInfo
 
-	sv.ip = s.ip
-	sv.port = s.port
+	sv.Ip = s.ip
+	sv.Port = s.port
 
 	sv.Challenge = s.ReadLong()
 	sv.Token = s.ReadLong()
