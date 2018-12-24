@@ -14,7 +14,7 @@ import "github.com/ch0ww/odamexgo"
 
 Then, create an ServerQuery class by parsing an Odamex URI :
 ```golang
-odasv, err := odamex.NewOdaURI("odamex://<ip>[:<port>]")
+odasv, err := odamexgo.NewOdaURI("odamex://<ip>[:<port>]")
 if err != nil {
     fmt.Println(err)
     return

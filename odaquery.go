@@ -1,7 +1,6 @@
-﻿package odamex
+﻿package odamexgo
 
 import (
-	"errors"
 	"fmt"
 	"net"
 	"strings"
@@ -42,6 +41,8 @@ type TeamInfo struct {
 ServerInfo : Handles all the data of an Odamex server
 */
 type ServerInfo struct {
+	ip, port string
+
 	Challenge int32
 	Token     int32
 	Protocol  int16
@@ -134,7 +135,7 @@ func NewOdaURI(link string) (*ServerQuery, error) {
 		}
 	}
 
-	return nil, errors.New("Odamex link is not valid (argument should be \"odamex://<ip>[:<port>])\"")
+	return nil, fmt.Errorf("Odamex link is not valid (argument should be \"odamex://<ip>[:<port>])\"")
 }
 
 // IsCooperation : Checks if the server is a Cooperation Game.
@@ -176,6 +177,9 @@ func (s *ServerQuery) AddCVAR(list []CVARInfo, name string) []CVARInfo {
 func (s *ServerQuery) ParseOdamex070() ServerInfo {
 
 	var sv ServerInfo
+
+	sv.ip = s.ip
+	sv.port = s.port
 
 	sv.Challenge = s.ReadLong()
 	sv.Token = s.ReadLong()

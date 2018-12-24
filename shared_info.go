@@ -1,4 +1,4 @@
-package odamex
+package odamexgo
 
 import "encoding/binary"
 
