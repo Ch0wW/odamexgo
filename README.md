@@ -1,5 +1,5 @@
 # odamexgo
-A simple Golang class to query an Odamex server. It currently supports Odamex 0.7.0 servers at the moment (and probably more in the future)
+A simple Golang class to query an Odamex server. It currently supports Odamex 0.7.0/0.8.X servers at the moment (and probably more in the future)
 
 ## Installation
 ```bash
