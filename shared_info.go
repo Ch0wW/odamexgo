@@ -1,6 +1,9 @@
 package odamexgo
 
-import "encoding/binary"
+import (
+	"encoding/binary"
+	"fmt"
+)
 
 // ReadString : Reads the string.
 // Odamex ends every string with a 0 byte, so we can delimit them perfectly.
@@ -65,4 +68,12 @@ func (s *ServerQuery) ReadBool() bool {
 		return true
 	}
 	return false
+}
+
+// GetLittleEndianBytesFromInt32 : Convert an Odamex answer to bytes for easier challenging
+func GetLittleEndianBytesFromInt32(value uint32) string {
+	bb := make([]byte, 128)
+	binary.LittleEndian.PutUint32(bb, value)
+
+	return fmt.Sprintf("% x", bb)
 }
